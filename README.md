@@ -17,7 +17,7 @@ Use the following to create partitions:
 
 ## Format partitions
  - mkfs.ext4 /dev/sda1
- - mkfs.ext4 /dev/sda2
+ - mkfs.ext4 /de v/sda2
  
  *This creates an ext4 filesystem on both of those partitions*
  
@@ -52,12 +52,19 @@ Use the following to create partitions:
 - grub-install /dev/sda
 - grub-mkconfig -o /boot/grub/grub.cfg
 
-## Install sudo
-- pacman -S sudo
+## Install sudo and networking tools
+- pacman -S sudo dhcp dhcpcd
+- systemctl enable dhcpcd
 
 ## Create users
  - useradd jake -m -g wheel
+ - passwd jake
  - useradd codi -m -g wheel
+ - passwd codi
  - chage -d 0 codi
+
+## Install Window Manager
+- pacman -S xorg herbstluftwm  lightdm-gtk-greeter
  
- 
+## Install preferred software
+- pacman -S urxvt firefox
