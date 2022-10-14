@@ -64,7 +64,7 @@ Use the following to create partitions:
  - chage -d 0 codi
 
 ## Install Window Manager
-- pacman -S xorg herbstluftwm  lightdm-gtk-greeter
+- pacman -S xorg herbstluftwm lightdm-gtk-greeter
  
 ## Install preferred software
-- pacman -S urxvt firefox
+- pacman -S urxvt firefox rofi feh picom
