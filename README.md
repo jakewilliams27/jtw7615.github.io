@@ -26,7 +26,7 @@ Use the following to create partitions:
  - mount --mkdir /dev/sda1 /mnt/boot (mounts the boot partition)
 
 ## Download base packages
- - pacstrap -K /mnt base linux linux-firmware nano
+ - pacstrap -K /mnt base linux linux-firmware nano vi
  
  ## Generate FStab
   - genfstab -U /mnt >> /mnt/etc/fstab
@@ -63,8 +63,12 @@ Use the following to create partitions:
  - passwd codi
  - chage -d 0 codi
 
+## Configure Sudo
+ - visudo
+   Find line and uncomment wheel with password
+
 ## Install Window Manager
 - pacman -S xorg herbstluftwm lightdm-gtk-greeter
  
 ## Install preferred software
-- pacman -S urxvt firefox rofi feh picom
+- pacman -S urxvt firefox rofi feh picom neofetch
