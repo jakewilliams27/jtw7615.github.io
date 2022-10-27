@@ -72,3 +72,12 @@ Use the following to create partitions:
  
 ## Install preferred software
 - pacman -S urxvt firefox rofi feh picom neofetch
+
+## Reboot and login to user instead of root
+
+## Change user shell
+- sudo pacman -S fish
+- chsh -s /bin/fish
+
+## Install ssh
+- pacman -S openssh
