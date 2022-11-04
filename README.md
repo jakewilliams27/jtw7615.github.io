@@ -87,9 +87,10 @@ Use the following to create partitions:
 - pacman -S openssh
 
 ## Use ssh
-- ssh 
+- ssh sysadmin@10.10.1.135
 
 ![VM](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm.png)
 ![VM Run](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_run.png)
+![VM SSH]()
 ![VM Firefox](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_firefox.png)
 ![VM Dual](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_dual.png)
