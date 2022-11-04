@@ -89,4 +89,7 @@ Use the following to create partitions:
 ## Use ssh
 - ssh 
 
-![]()
+![VM](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm.png)
+![VM Run](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_run.png)
+![VM Firefox](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_firefox.png)
+![VM Dual](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_dual.png)
