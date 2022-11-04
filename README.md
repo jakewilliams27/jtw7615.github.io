@@ -91,6 +91,6 @@ Use the following to create partitions:
 
 ![VM](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm.png)
 ![VM Run](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_run.png)
-![VM SSH]()
+![VM SSH](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_ssh.png)
 ![VM Firefox](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_firefox.png)
-![VM Dual](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_dual.png)
+![sshDual](https://raw.githubusercontent.com/jtw7615/jtw7615.github.io/main/vm_dual.png)
