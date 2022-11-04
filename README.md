@@ -1,4 +1,7 @@
 # Arch Linux Install
+##Initial Notes
+I have a Arch setup dualbooted on my main Laptop, so I didn't really have any install questions. I chose a different window manager and bar than my main machine so I could play around with the configuration. 
+
 ## Verify network connection
 
 Use ping -c 3 google.com to ensure connection
@@ -53,6 +56,7 @@ Use the following to create partitions:
 - grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Install sudo and networking tools
+*I forgot this the first time and had to boot back into my live disk to install*
 - pacman -S sudo dhcp dhcpcd
 - systemctl enable dhcpcd
 
@@ -81,3 +85,8 @@ Use the following to create partitions:
 
 ## Install ssh
 - pacman -S openssh
+
+## Use ssh
+- ssh 
+
+![]()
