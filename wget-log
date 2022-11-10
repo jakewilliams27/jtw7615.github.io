@@ -1,0 +1,7 @@
+--2022-11-10 11:34:32--  https://media-exp1.licdn.com/dms/image/D5603AQEjBFkLmb1GmQ/profile-displayphoto-shrink_800_800/0/1664486068498?e=1673481600
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving media-exp1.licdn.com (media-exp1.licdn.com)... 164.58.78.10, 164.58.78.11, 2610:1d8:a0b:1::a43a:4e0b, ...
+Connecting to media-exp1.licdn.com (media-exp1.licdn.com)|164.58.78.10|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2022-11-10 11:34:32 ERROR 403: Forbidden.
+
