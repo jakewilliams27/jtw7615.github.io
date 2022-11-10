@@ -1,5 +1,5 @@
 # Arch Linux Install
-##Initial Notes
+## Initial Notes
 I have a Arch setup dualbooted on my main Laptop, so I didn't really have any install questions. I chose a different window manager and bar than my main machine so I could play around with the configuration. 
 
 ## Verify network connection
