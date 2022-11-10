@@ -11,12 +11,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.profile {
+				display: none;
+			}
+			@media only screen and (max-device-width: 600px) {
+				.profile { 
+					display: block;
+					margin:auto;
+					margin-bottom: 10%;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
+					<img class="image" style="height: 300px; width: 300px; max-width: 80vw; max-height: 80vw; border-radius: 100%; margin: auto;" src="images/profile.png" alt="">
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
@@ -34,6 +47,7 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
+							<img class="image profile" style="height: 300px; width: 300px; max-width: 80vw; max-height: 80vw; border-radius: 100%;" src="images/profile.png" alt="">
 							<h1>Jake Williams</h1>
 							<p>I am a junior cybersecurity major at the University of Tulsa. Welcome to my portfolio!</p>
 							<ul class="actions">
@@ -57,7 +71,7 @@
 							</div>
 						</section>
 						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+							<a href="#" class="image"><img src="images/mockup1.png" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>Spout Music Player (WIP)</h2>
@@ -114,7 +128,7 @@
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<p>Please contact me or reach out about projects I am involved with.</p>
 							<div class="split style1">
 								<section>
 									<form action="https://formkeep.com/f/821fee72cc17"
@@ -154,7 +168,7 @@
 											<h3>Social</h3>
 											<ul class="icons">
 												<li><a href="https://github.com/jtw7615" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="www.linkedin.com/in/jake-t-williams" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+												<li><a href="https://www.linkedin.com/in/jake-t-williams" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 											</ul>
 										</li>
 									</ul>
