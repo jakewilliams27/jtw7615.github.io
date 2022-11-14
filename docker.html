@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Docker Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Jake Williams</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="arch.html">Arch</a></li>
+						<li><a href="spout.html">Spout</a></li>
+						<li><a href="docker.html" class="active">Docker</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Docker Install</h1>
+							<p>I used <a href="https://linuxiac.com/wordpress-with-docker/">https://linuxiac.com/wordpress-with-docker/</a> but made minor modifications so that it would work with Windows instead of linux</p>
+							<h2>Install Docker GUI</h2>
+							<p>I used the windows docker GUI which came with docker-compose.</p>
+							<h2>Create directory</h2>
+							<p>To create a docker container I first had to create the directory it would run out of</p>
+							<code>mkdir wordpress</code><br>
+							<code>cd wordpress</code>
+							<h2>Setup Configuration</h2>
+							<pre><code>
+version: '3'
+	services:
+	mysql:
+		image: mysql:latest
+		restart: always
+		environment:
+		MYSQL_ROOT_PASSWORD: my_password
+		MYSQL_DATABASE: wordpress
+		MYSQL_USER: wordpress_user
+		MYSQL_PASSWORD: wordpress_password
+		volumes:
+		- mysql_data:/var/lib/mysql
+	wordpress:
+		image: wordpress:latest
+		depends_on:
+		- mysql
+		ports:
+		- 8080:80
+		restart: always
+		environment:
+		WORDPRESS_DB_HOST: mysql:3306
+		WORDPRESS_DB_USER: wordpress_user
+		WORDPRESS_DB_PASSWORD: wordpress_password
+		volumes:
+		- ./wp-content:/var/www/html/wp-content
+	volumes:
+	mysql_data:
+							</code></pre>
+							<p>This configuration specifies that we use mysql and wordpress. It also specifies the ports(8080:80) and credentials for each service</p>
+							<h2>Run Docker Container</h2>
+							<code>docker-compose up -d</code>
+							<p>This starts up the docker container and makes the wordpress server available</p>
+							<h2>Configure Wordpress from website</h2>
+							Go to 127.0.0.1:8080 and follow the instructions to create a new wordpress site.
+							<img class="image fit" src="images/docker.png" alt="VM">
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
