@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Docker Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Jake Williams</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="arch.html">Arch</a></li>
+						<li><a href="spout.html">Spout</a></li>
+						<li><a href="docker.html" class="active">Docker</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 id="wireguard">Wireguard</h1>
+<ul>
+<li>Followed these instructions: <a href="https://thematrix.dev/setup-wireguard-vpn-server-with-docker/*">https://thematrix.dev/setup-wireguard-vpn-server-with-docker/*</a><h2 id="first-create-a-4-ubuntu-droplet">First create a 4$ Ubuntu  Droplet</h2>
+</li>
+</ul>
+<h2 id="install-docker">Install docker</h2>
+<pre><code>sudo apt-<span class="hljs-keyword">get</span> docker docker-compose
+</code></pre><h2 id="make-and-enter-directory">Make and enter directory</h2>
+<pre><code><span class="hljs-built_in">mkdir</span> wireguard
+<span class="hljs-built_in">mkdir</span> wireguard/<span class="hljs-built_in">config</span>
+cd wireguard
+</code></pre><h2 id="create-docker-compose-yml">Create docker-compose.yml</h2>
+<p>Put this in docker-compose.yml</p>
+<pre><code>version: '3.8'
+services:
+  wireguard:
+    container_name: wireguard
+    image: linuxserver/wireguard
+    environment:
+      -<span class="ruby"> PUID=<span class="hljs-number">1000</span>
+</span>      -<span class="ruby"> PGID=<span class="hljs-number">1000</span>
+</span>      -<span class="ruby"> TZ=America/Chicago
+</span>      -<span class="ruby"> SERVERURL=<span class="hljs-number">10.124</span>.<span class="hljs-number">0</span>.<span class="hljs-number">2</span>
+</span>      -<span class="ruby"> SERVERPORT=<span class="hljs-number">51820</span>
+</span>      -<span class="ruby"> PEERS=pc1,pc2,phone1
+</span>      -<span class="ruby"> PEERDNS=auto
+</span>      -<span class="ruby"> INTERNAL_SUBNET=<span class="hljs-number">10.0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>
+</span>    ports:
+      -<span class="ruby"> <span class="hljs-number">51820</span><span class="hljs-symbol">:</span><span class="hljs-number">51820</span>/udp
+</span>    volumes:
+      -<span class="ruby"> <span class="hljs-symbol">type:</span> bind
+</span>        source: ./config/
+        target: /config/
+      -<span class="ruby"> <span class="hljs-symbol">type:</span> bind
+</span>        source: /lib/modules
+        target: /lib/modules
+    restart: always
+    cap_add:
+      -<span class="ruby"> NET_ADMIN
+</span>      -<span class="ruby"> SYS_MODULE
+</span>    sysctls:
+      -<span class="ruby"> net.ipv4.conf.all.src_valid_mark=<span class="hljs-number">1</span></span>
+</code></pre><h2 id="start-docker-cntainer">Start docker cntainer</h2>
+<pre><code>docker-compose up <span class="hljs-_">-d</span>
+</code></pre><h2 id="get-qr-code-from-logs">Get QR code from logs</h2>
+<pre><code>docker-compose logs <span class="hljs-_">-f</span> wireguard
+</code></pre>
+<img class="image fit" src="wireguard.png" alt="">
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
